@@ -1,0 +1,27 @@
+description = f'''
+Model: 
+Description: 
+Features: 
+Target: 
+Notes: 
+'''
+
+
+json_safe_metrics = {
+    k: float(v) if isinstance(v, (np.generic, np.float64, np.float32)) else v
+    for k, v in summary.items()
+    if not isinstance(v, pd.Series)
+}
+
+json_path = RESULTS_PATH / "model_metrics_log.json"
+
+log_run_json(
+    identifier=".",
+    model_type=".",
+    features=features,
+    train_subset=".",
+    test_subset=".",
+    description=description,
+    metrics=json_safe_metrics,
+    json_path=json_path
+)
