@@ -1,5 +1,6 @@
 [
   {
+    "run": 1,
     "id": "Linear Regression Baseline",
     "model_type": "Linear Regression",
     "features": [
@@ -7,36 +8,26 @@
       "SpO2(%)"
     ],
     "train_subset": "full train set",
+    "val_subset": "full validation set",
     "test_subset": "full test set",
     "metrics": {
-      "MAE": 1.0494405509819575,
-      "MSE": 2.7691911047393236,
-      "RMSE": 1.2560054859268592,
-      "Mean Bias Error": 0.00976486534891216,
-      "MAPE": 9.852667717874045,
-      "nRMSE": 6.678169546854992
+      "test": {
+        "MAE": 1.0494405509819575,
+        "MSE": 2.7691911047393236,
+        "RMSE": 1.2560054859268592,
+        "Mean Bias Error": 0.00976486534891216,
+        "MAPE": 9.852667717874045,
+        "nRMSE": 6.678169546854992
+      },
+      "validation": {
+        "MAE": 1.2253118045848042,
+        "MSE": 3.936171417235258,
+        "RMSE": 1.5277414906515303,
+        "Mean Bias Error": 0.27710974543250805,
+        "MAPE": 10.096038630940305,
+        "nRMSE": 7.8345717469309255
+      }
     },
-    "description": "Model: Linear Regression Baseline\nDescription: This model uses a linear regression approach to predict the shift in PiO2 based on the raw shift, PiO2, and SpO2 values. It is trained on a dataset of neonatal patients with ODC data.\nFeatures: shift_raw, PiO2(kPa), SpO2(%)\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table",
-    "run": 1
-  },
-  {
-    "id": "Lasso Regression Baseline",
-    "model_type": "Lasso Regression",
-    "features": [
-      "PiO2(kPa)",
-      "SpO2(%)"
-    ],
-    "train_subset": "full train set",
-    "test_subset": "full test set",
-    "metrics": {
-      "MAE": 1.0486831421004321,
-      "MSE": 2.7634248105381785,
-      "RMSE": 1.2547681602796317,
-      "Mean Bias Error": 0.009886769197846017,
-      "MAPE": 9.84753827263586,
-      "nRMSE": 6.671590697837658
-    },
-    "description": "Model: Lasso Regression Baseline\nDescription: This model uses a lasso regression approach to predict the shift in PiO2 based on the raw shift, PiO2, and SpO2 values. The goal is to perform feature selection using the L1 regularization of the Lasso technique to find the subset of features that best predicts the shift. The model is trained on the full training set and evaluated on the full test set.\nFeatures: shift_raw, PiO2(kPa), SpO2(%)\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table",
-    "run": 2
+    "description": "Model: Linear Regression Baseline\nDescription: This model uses a linear regression approach to predict the shift in PiO2 based on the raw shift, PiO2, and SpO2 values. It is trained on a dataset of neonatal patients with ODC data.\nFeatures: shift_raw, PiO2(kPa), SpO2(%)\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   }
 ]
