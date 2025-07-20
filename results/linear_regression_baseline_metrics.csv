@@ -1,0 +1,7 @@
+,Test,Validation
+MAE,1.049,1.225
+MSE,2.769,3.936
+RMSE,1.256,1.528
+Mean Bias Error,0.01,0.277
+MAPE,9.853,10.096
+nRMSE,6.678,7.835
