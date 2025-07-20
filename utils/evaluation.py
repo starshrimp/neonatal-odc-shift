@@ -125,3 +125,63 @@ def bland_altman_plots(
     if show:
         plt.show()
     return fig, ax  
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def bland_altman_pct_comparison(
+    test_df,
+    val_df,
+    y_true_col='y_true',
+    y_pred_col='y_pred',
+    group_col=None,
+    title_test='Test Set',
+    title_val='Validation Set',
+    x_label="Mean of (Predicted, True)",
+    y_label="Percent Difference (%)",
+    sd_limit=1.96,
+    figsize=(12, 5),
+    show=True,
+):
+    """
+    Plot side-by-side percentage Bland-Altman plots for test_df and val_df.
+    Optionally average over group_col (e.g. Patient_ID).
+    """
+    
+    def compute_plot_data(df):
+        if group_col:
+            df = df.groupby(group_col)[[y_true_col, y_pred_col]].mean()
+        y_true = df[y_true_col]
+        y_pred = df[y_pred_col]
+        mean_val = 0.5 * (y_true + y_pred)
+        diff_pct = 100 * (y_pred - y_true) / mean_val
+        bias = np.mean(diff_pct)
+        sd = np.std(diff_pct, ddof=1)
+        loa_upper = bias + sd_limit * sd
+        loa_lower = bias - sd_limit * sd
+        return mean_val, diff_pct, bias, sd, loa_upper, loa_lower
+
+    fig, axs = plt.subplots(1, 2, figsize=figsize, sharey=True)
+
+    for ax, df, title in zip(axs, [test_df, val_df], [title_test, title_val]):
+        mean_val, diff_pct, bias, sd, upper, lower = compute_plot_data(df)
+        ax.scatter(mean_val, diff_pct, alpha=0.6)
+        ax.axhline(bias, color='gray', linestyle='--')
+        ax.axhline(upper, color='gray', linestyle='--')
+        ax.axhline(lower, color='gray', linestyle='--')
+
+        ax.set_title(f'Bland-Altman {title}')
+        ax.set_xlabel(x_label)
+        ax.set_ylabel(y_label)
+
+        # Text annotation
+        x_text = ax.get_xlim()[0] + 0.05 * (ax.get_xlim()[1] - ax.get_xlim()[0])
+        y_text = ax.get_ylim()[1] - 0.05 * (ax.get_ylim()[1] - ax.get_ylim()[0])
+        text = f"Bias = {bias:.2f}%\nSD = {sd:.2f}%\n95% LoA = [{lower:.2f}%, {upper:.2f}%]"
+        ax.text(x_text, y_text, text, fontsize=10, va='top',
+                bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.7))
+
+    plt.tight_layout()
+    if show:
+        plt.show()
+    return fig, axs
