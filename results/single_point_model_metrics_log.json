@@ -1,0 +1,23 @@
+[
+  {
+    "run": 1,
+    "id": "Linear Regression Baseline",
+    "model_type": "Linear Regression",
+    "features": [
+      "shift_raw",
+      "PiO2(kPa)",
+      "SpO2(%)"
+    ],
+    "train_subset": "full train set",
+    "test_subset": "full test set",
+    "metrics": {
+      "MAE": 1.0166710611638348,
+      "MSE": 2.693349157177121,
+      "RMSE": 1.212357466333301,
+      "Mean Bias Error": 0.02807287941705636,
+      "MAPE": 9.510642866147965,
+      "nRMSE": 6.446093430551146
+    },
+    "description": "Model: Linear Regression Baseline\nDescription: This model uses a linear regression approach to predict the shift in PiO2 based on the raw shift, PiO2, and SpO2 values. It is trained on a dataset of neonatal patients with ODC data.\nFeatures: shift_raw, PiO2(kPa), SpO2(%)\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+  }
+]
