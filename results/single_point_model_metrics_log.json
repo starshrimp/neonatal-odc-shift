@@ -29,5 +29,38 @@
       }
     },
     "description": "Model: Linear Regression Baseline\nDescription: This model uses a linear regression approach to predict the shift in PiO2 based on the raw shift, PiO2, and SpO2 values. It is trained on a dataset of neonatal patients with ODC data.\nFeatures: shift_raw, PiO2(kPa), SpO2(%)\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+  },
+  {
+    "run": 2,
+    "id": "Linear Regression Optimal features",
+    "model_type": "Linear Regression",
+    "features": [
+      "shift_raw",
+      "log_PiO2",
+      "SpO2_squared",
+      "saturation_deficit"
+    ],
+    "train_subset": "full train set",
+    "val_subset": "full validation set",
+    "test_subset": "full test set",
+    "metrics": {
+      "test": {
+        "MAE": 0.891493060785742,
+        "MSE": 1.7365087126833518,
+        "RMSE": 1.0822822775515806,
+        "Mean Bias Error": 0.024563356914759214,
+        "MAPE": 8.588762077557584,
+        "nRMSE": 5.754484855384394
+      },
+      "validation": {
+        "MAE": 1.1337547009488695,
+        "MSE": 3.1393599408721387,
+        "RMSE": 1.3826318991984474,
+        "Mean Bias Error": 0.19477602703088365,
+        "MAPE": 9.352985328196182,
+        "nRMSE": 7.090419995889475
+      }
+    },
+    "description": "Model: Linear Regression Optimal features\nDescription: This is a model that is trained on the optimal features derived from the forward stepwise selection process.\nFeatures: shift_raw, log_PiO2, SpO2_squared, saturation_deficit\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   }
 ]
