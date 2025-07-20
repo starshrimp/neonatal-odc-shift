@@ -1,0 +1,11 @@
+features,MAE,MSE,RMSE,Bias
+"['shift_raw', 'SpO2(%)', 'log_PiO2', 'log_SpO2', 'SpO2_squared']",0.891,1.733,1.082,0.025
+"['shift_raw', 'SpO2(%)', 'log_PiO2', 'log_SpO2', 'SpO2_squared', 'saturation_deficit']",0.891,1.733,1.082,0.025
+"['shift_raw', 'log_PiO2', 'log_SpO2', 'SpO2_squared', 'saturation_deficit']",0.891,1.733,1.082,0.025
+"['shift_raw', 'log_PiO2', 'SpO2_squared', 'saturation_deficit']",0.891,1.737,1.082,0.025
+"['shift_raw', 'SpO2(%)', 'log_PiO2', 'SpO2_squared']",0.891,1.737,1.082,0.025
+"['shift_raw', 'SpO2(%)', 'log_PiO2', 'SpO2_squared', 'saturation_deficit']",0.891,1.737,1.082,0.025
+"['shift_raw', 'log_PiO2', 'log_SpO2', 'SpO2_squared']",0.893,1.74,1.083,0.024
+"['shift_raw', 'log_SpO2', 'SpO2_over_PiO2', 'saturation_deficit']",0.894,1.756,1.093,0.056
+"['shift_raw', 'SpO2(%)', 'log_SpO2', 'SpO2_over_PiO2']",0.894,1.756,1.093,0.056
+"['shift_raw', 'SpO2(%)', 'log_SpO2', 'SpO2_over_PiO2', 'saturation_deficit']",0.894,1.756,1.093,0.056
