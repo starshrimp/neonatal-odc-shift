@@ -6,7 +6,7 @@ def get_spo2_to_po2_interpolator(odc):
 
 def compute_shift_raw(row, spo2_to_po2):
     Pc = spo2_to_po2([row['SpO2(%)']])[0]
-    return row['Insp.O2(kPa)'] - Pc
+    return row['PiO2(kPa)'] - Pc
 
 def add_shift_raw_column(df, spo2_to_po2):
     df['shift_raw'] = df.apply(lambda row: compute_shift_raw(row, spo2_to_po2), axis=1)
