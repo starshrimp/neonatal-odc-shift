@@ -1,0 +1,9 @@
+Step,Num_Features,Features,Adjusted_R2
+1,2,"shift_raw, SpO2_over_PiO2",0.836
+2,3,"shift_raw, SpO2_over_PiO2, SpO2_squared",0.84
+3,4,"shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2",0.866
+4,5,"shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2, saturation_deficit",0.872
+5,6,"shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2, saturation_deficit, PiO2(kPa)",0.874
+6,7,"shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2, saturation_deficit, PiO2(kPa), log_SpO2",0.874
+7,8,"shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2, saturation_deficit, PiO2(kPa), log_SpO2, Hb_SpO2",0.875
+8,9,"shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2, saturation_deficit, PiO2(kPa), log_SpO2, Hb_SpO2, Hb",0.875
