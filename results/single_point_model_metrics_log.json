@@ -95,5 +95,38 @@
       }
     },
     "description": "Model: Linear Regression Optimal Stepwise Forward Selection\nDescription: This is a model that is trained on the optimal features derived from the forward stepwise selection process.\nFeatures: shift_raw, log_PiO2, SpO2_squared, saturation_deficit\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+  },
+  {
+    "run": 4,
+    "id": "Optimized Linear Regression",
+    "model_type": "Linear Regression",
+    "features": [
+      "shift_raw",
+      "SpO2_over_PiO2",
+      "SpO2_squared",
+      "log_PiO2"
+    ],
+    "train_subset": "full train set",
+    "val_subset": "full validation set",
+    "test_subset": "full test set",
+    "metrics": {
+      "test": {
+        "MAE": 0.6260510012063988,
+        "MSE": 1.3571156358392584,
+        "RMSE": 0.7222109461212484,
+        "Mean Bias Error": 0.14105525241019962,
+        "MAPE": 5.915888896133357,
+        "nRMSE": 4.214172569917463
+      },
+      "validation": {
+        "MAE": 0.48966934000783385,
+        "MSE": 0.6232244138524586,
+        "RMSE": 0.5342431708071123,
+        "Mean Bias Error": 0.0091159399914143,
+        "MAPE": 4.1180625698969475,
+        "nRMSE": 2.7397085682416016
+      }
+    },
+    "description": "Model: Optimized Linear Regression Model\nDescription: This is a model that is trained on the optimal features derived from the forward stepwise selection process and on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   }
 ]
