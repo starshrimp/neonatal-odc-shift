@@ -61,6 +61,39 @@
         "nRMSE": 7.090419995889475
       }
     },
-    "description": "Model: Linear Regression Optimal features\nDescription: This is a model that is trained on the optimal features derived from the forward stepwise selection process.\nFeatures: shift_raw, log_PiO2, SpO2_squared, saturation_deficit\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+    "description": "Model: Linear Regression Optimal features\nDescription: This is a model that is trained on the optimal features derived from combinatory exploration.\nFeatures: shift_raw, log_PiO2, SpO2_squared, saturation_deficit\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+  },
+  {
+    "run": 3,
+    "id": "Linear Regression Optimal features",
+    "model_type": "Linear Regression",
+    "features": [
+      "shift_raw",
+      "SpO2_over_PiO2",
+      "SpO2_squared",
+      "log_PiO2"
+    ],
+    "train_subset": "full train set",
+    "val_subset": "full validation set",
+    "test_subset": "full test set",
+    "metrics": {
+      "test": {
+        "MAE": 0.9718112925504052,
+        "MSE": 2.2547902058655773,
+        "RMSE": 1.1566284204802506,
+        "Mean Bias Error": 0.016569540672316502,
+        "MAPE": 9.189955459893824,
+        "nRMSE": 6.149782609411311
+      },
+      "validation": {
+        "MAE": 1.1398581205174938,
+        "MSE": 3.3769246232832333,
+        "RMSE": 1.417346413849746,
+        "Mean Bias Error": 0.24275539556371642,
+        "MAPE": 9.427758791178274,
+        "nRMSE": 7.268443147947415
+      }
+    },
+    "description": "Model: Linear Regression Optimal Stepwise Forward Selection\nDescription: This is a model that is trained on the optimal features derived from the forward stepwise selection process.\nFeatures: shift_raw, log_PiO2, SpO2_squared, saturation_deficit\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   }
 ]
