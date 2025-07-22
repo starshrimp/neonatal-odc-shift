@@ -1,0 +1,6 @@
+Model,MAE,MSE,RMSE,Mean Bias Error,MAPE (%),nRMSE (%)
+Linear Regression Baseline,1.049,2.769,1.256,0.01,9.853,6.678
+Optimized Linear Regression,0.626,1.357,0.722,0.141,5.916,4.214
+Baseline XGBoost Regressor,0.922,2.331,1.122,0.039,8.718,5.967
+XBoost Regressor Configured,0.636,1.29,0.728,0.103,6.034,4.246
+Final Bayesian Ridge Model,0.647,1.517,0.748,0.146,6.119,4.364
