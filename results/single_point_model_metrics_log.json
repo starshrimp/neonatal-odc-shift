@@ -134,40 +134,31 @@
     "id": "Baseline XGBoost Regressor",
     "model_type": "XGBoost",
     "features": [
-      "shift_raw",
       "PiO2(kPa)",
-      "SpO2(%)",
-      "Hb",
-      "log_PiO2",
-      "log_SpO2",
-      "SpO2_over_PiO2",
-      "SpO2_squared",
-      "Hb_SpO2",
-      "saturation_deficit",
-      "CaO2_estimate"
+      "SpO2(%)"
     ],
     "train_subset": "full train set",
     "val_subset": "full validation set",
     "test_subset": "full test set",
     "metrics": {
       "test": {
-        "MAE": 0.9784455425370466,
-        "MSE": 2.654412025198056,
-        "RMSE": 1.1841929326434386,
-        "Mean Bias Error": -0.05347050232378324,
-        "MAPE": 9.173964761542388,
-        "nRMSE": 6.2963428655285645
+        "MAE": 0.9222126179733596,
+        "MSE": 2.3313572714664677,
+        "RMSE": 1.122344522389167,
+        "Mean Bias Error": 0.038644889052087336,
+        "MAPE": 8.71772188534651,
+        "nRMSE": 5.967495440489911
       },
       "validation": {
-        "MAE": 1.0238831352052233,
-        "MSE": 2.8217274244010344,
-        "RMSE": 1.241600961941435,
-        "Mean Bias Error": 0.14940978075002703,
-        "MAPE": 8.276468872274181,
-        "nRMSE": 6.367184420212488
+        "MAE": 0.9780679177893876,
+        "MSE": 2.6559344757558487,
+        "RMSE": 1.1892069967637415,
+        "Mean Bias Error": -0.058007677382376874,
+        "MAPE": 7.8939675289493545,
+        "nRMSE": 6.098497419301239
       }
     },
-    "description": "Model: Baseline XGBoost Regressor\nDescription: This is a model that is trained on all engineered features on the full train dataset and evaluated on the full test/val sets.\nFeatures: shift_raw, PiO2(kPa), SpO2(%), Hb, log_PiO2, log_SpO2, SpO2_over_PiO2, SpO2_squared, Hb_SpO2, saturation_deficit, CaO2_estimate\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+    "description": "Model: Baseline XGBoost Regressor\nDescription: This is a model that is trained on the two base features and on the full train dataset and evaluated on the full test/val sets.\nFeatures: PiO2(kPa), SpO2(%)\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   },
   {
     "run": 6,
@@ -175,38 +166,31 @@
     "model_type": "XGBoost",
     "features": [
       "shift_raw",
-      "PiO2(kPa)",
-      "SpO2(%)",
-      "Hb",
       "log_PiO2",
-      "log_SpO2",
       "SpO2_over_PiO2",
-      "SpO2_squared",
-      "Hb_SpO2",
-      "saturation_deficit",
-      "CaO2_estimate"
+      "SpO2_squared"
     ],
     "train_subset": "full train set",
     "val_subset": "full validation set",
     "test_subset": "full test set",
     "metrics": {
       "test": {
-        "MAE": 0.6833840857242804,
-        "MSE": 1.463441770408147,
-        "RMSE": 0.7763349227847863,
-        "Mean Bias Error": -0.019491488045431812,
-        "MAPE": 6.39745359493044,
-        "nRMSE": 4.529991347042508
+        "MAE": 0.6361682995659774,
+        "MSE": 1.2898158592737405,
+        "RMSE": 0.7277377873779639,
+        "Mean Bias Error": 0.10263718741887691,
+        "MAPE": 6.034057402705108,
+        "nRMSE": 4.2464222373414025
       },
       "validation": {
-        "MAE": 0.5605399738658559,
-        "MSE": 0.7218111116612748,
-        "RMSE": 0.5893827848262362,
-        "Mean Bias Error": -0.07886376063028963,
-        "MAPE": 4.520466414665373,
-        "nRMSE": 3.0224758196217243
+        "MAE": 0.56014872242706,
+        "MSE": 0.837576407275403,
+        "RMSE": 0.59360449322415,
+        "Mean Bias Error": -0.07441538049717135,
+        "MAPE": 4.379522161506948,
+        "nRMSE": 3.0441256062776922
       }
     },
-    "description": "Model: XGBoost Regressor Subset\nDescription: This is a model that is trained on all engineered features on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, PiO2(kPa), SpO2(%), Hb, log_PiO2, log_SpO2, SpO2_over_PiO2, SpO2_squared, Hb_SpO2, saturation_deficit, CaO2_estimate\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+    "description": "Model: XGBoost Regressor Subset\nDescription: This is a model that is trained on all engineered features on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, log_PiO2, SpO2_over_PiO2, SpO2_squared\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   }
 ]
