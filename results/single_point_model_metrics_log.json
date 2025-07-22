@@ -106,9 +106,9 @@
       "SpO2_squared",
       "log_PiO2"
     ],
-    "train_subset": "full train set",
-    "val_subset": "full validation set",
-    "test_subset": "full test set",
+    "train_subset": "SpO₂ < 92.5% train subset",
+    "val_subset": "SpO₂ < 92.5% validation subset",
+    "test_subset": "SpO₂ < 92.5% test subset",
     "metrics": {
       "test": {
         "MAE": 0.6260510012063988,
@@ -162,7 +162,7 @@
   },
   {
     "run": 6,
-    "id": "XBoost Regressor Subset",
+    "id": "XBoost Regressor Configured",
     "model_type": "XGBoost",
     "features": [
       "shift_raw",
@@ -170,9 +170,9 @@
       "SpO2_over_PiO2",
       "SpO2_squared"
     ],
-    "train_subset": "full train set",
-    "val_subset": "full validation set",
-    "test_subset": "full test set",
+    "train_subset": "SpO₂ < 92.5% train subset",
+    "val_subset": "SpO₂ < 92.5% validation subset",
+    "test_subset": "SpO₂ < 92.5% test subset",
     "metrics": {
       "test": {
         "MAE": 0.6361682995659774,
@@ -191,7 +191,7 @@
         "nRMSE": 3.0441256062776922
       }
     },
-    "description": "Model: XGBoost Regressor Subset\nDescription: This is a model that is trained on all engineered features on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, log_PiO2, SpO2_over_PiO2, SpO2_squared\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+    "description": "Model: XGBoost Regressor Configured\nDescription: This is a model that is trained on all engineered features on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, log_PiO2, SpO2_over_PiO2, SpO2_squared\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   },
   {
     "run": 7,
@@ -203,9 +203,9 @@
       "SpO2_squared",
       "log_PiO2"
     ],
-    "train_subset": "full train set",
-    "val_subset": "full validation set",
-    "test_subset": "full test set",
+    "train_subset": "SpO₂ < 92.5% train subset",
+    "val_subset": "SpO₂ < 92.5% validation subset",
+    "test_subset": "SpO₂ < 92.5% test subset",
     "metrics": {
       "test": {
         "MAE": 0.6468985358552788,
