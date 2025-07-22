@@ -192,5 +192,38 @@
       }
     },
     "description": "Model: XGBoost Regressor Subset\nDescription: This is a model that is trained on all engineered features on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, log_PiO2, SpO2_over_PiO2, SpO2_squared\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
+  },
+  {
+    "run": 7,
+    "id": "Final Bayesian Ridge Model",
+    "model_type": "Bayesian Ridge",
+    "features": [
+      "shift_raw",
+      "SpO2_over_PiO2",
+      "SpO2_squared",
+      "log_PiO2"
+    ],
+    "train_subset": "full train set",
+    "val_subset": "full validation set",
+    "test_subset": "full test set",
+    "metrics": {
+      "test": {
+        "MAE": 0.6468985358552788,
+        "MSE": 1.5168127361462087,
+        "RMSE": 0.747810774256267,
+        "Mean Bias Error": 0.14608517998721623,
+        "MAPE": 6.118807211157091,
+        "nRMSE": 4.3635501085723325
+      },
+      "validation": {
+        "MAE": 0.509026243570709,
+        "MSE": 0.652281421047319,
+        "RMSE": 0.5491150718989384,
+        "Mean Bias Error": 0.006221013077423816,
+        "MAPE": 4.323166341412444,
+        "nRMSE": 2.8159747276868634
+      }
+    },
+    "description": "Model: Final Bayesian Ridge Model\nDescription: This is a model that is trained on the optimal features derived from the forward stepwise selection process and on the subset of patients with SpO\u2082 < 92.5%.\nFeatures: shift_raw, SpO2_over_PiO2, SpO2_squared, log_PiO2\nTarget: shift\nNotes: patient-level macro metrics, ODC from neonatal table"
   }
 ]
