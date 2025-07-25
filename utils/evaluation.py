@@ -185,3 +185,31 @@ def bland_altman_pct_comparison(
     if show:
         plt.show()
     return fig, axs
+
+
+def extract_eval_metrics(summary):
+    return {
+        'MAE': round(summary['MAE'], 4),
+        'MSE': round(summary['MSE'], 4),
+        'RMSE': round(summary['RMSE'], 4),
+        'Bias': round(summary['Mean Bias Error'], 4),
+        'MAPE': round(summary['MAPE'], 4),
+        'nRMSE': round(summary['nRMSE'], 4),
+        'MAE_std': round(summary['per_patient_MAE'].std(), 4),
+        'MSE_std': round(summary['per_patient_MSE'].std(), 4),
+        'RMSE_std': round(summary['per_patient_RMSE'].std(), 4),
+        'N_patients': len(summary['per_patient_MAE'])
+    }
+
+def plot_metrics_with_error(df, title):
+    plt.figure(figsize=(10,6))
+    plt.errorbar(df['n_points'], df['MAE'], yerr=df['MAE_std'], marker='o', capsize=5, label='MAE ± SD')
+    plt.errorbar(df['n_points'], df['RMSE'], yerr=df['RMSE_std'], marker='s', capsize=5, label='RMSE ± SD')
+    plt.errorbar(df['n_points'], df['MSE'], yerr=df['MSE_std'], marker='^', capsize=5, label='MSE ± SD')
+    plt.xlabel('Number of datapoints per combination (n)')
+    plt.ylabel('Error')
+    plt.title(title)
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
